@@ -15,6 +15,12 @@ module.exports = {
                 hostname: "th.bing.com",
                 port: '',
                 pathname: '/**'
+            },
+            {
+                protocol: "https",
+                hostname: "http.cat",
+                port: '',
+                pathname: '/**'
             }
         ]
     }
