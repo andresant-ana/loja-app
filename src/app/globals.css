@@ -3,4 +3,22 @@
 @tailwind utilities;
 
 
+@layer components {
+    .cabecalho{
+        @apply bg-blue-900 text-white;
+
+        & ul {
+            @apply flex justify-center content-center;
+
+            & li {
+                @apply inline m-5;
+
+                & a {
+                    @apply block font-extrabold hover:bg-white hover:text-blue-900 rounded-md transition-all ease-out duration-300 p-2;
+                }
+            }
+        }
+    }
+}
+
 
