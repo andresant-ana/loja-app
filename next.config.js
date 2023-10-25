@@ -12,7 +12,7 @@ module.exports = {
             },
             {
                 protocol: "https",
-                hostname: "th.bing.com",
+                hostname: "mizunobr.vtexassets.com",
                 port: '',
                 pathname: '/**'
             },

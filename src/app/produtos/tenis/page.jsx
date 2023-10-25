@@ -10,7 +10,7 @@ export default function Tenis() {
 
         <div>
           <Image
-            src="https://th.bing.com/th/id/R.478e53b93574970d10b62508dc99e3b0?rik=b66%2bxpArBC3uTA&pid=ImgRaw&r=0"
+            src="https://mizunobr.vtexassets.com/arquivos/ids/233425-1600-1600?v=638216659790200000&width=1600&height=1600&aspect=true"
             width={300}
             height={300}
             alt="Tenis"
