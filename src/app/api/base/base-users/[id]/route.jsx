@@ -3,7 +3,6 @@ import { NextResponse } from "next/server";
 
 export async function GET(request,{params}) {
 
-
   const file = await fs.readFile(process.cwd() + "/src/app/api/base/db.json", 'utf8');
 
   // Extraindo a lista de usuários do arquivo JSON:
@@ -17,5 +16,29 @@ export async function GET(request,{params}) {
     return id == 0 ? NextResponse.json(lista.usuarios) : NextResponse.redirect("http://localhost:3000/error")
   }
 
-  
+}
+
+export async function POST(request, response){
+
+  const file = await fs.readFile(process.cwd() + "/src/app/api/base/db.json", 'utf8');
+  const lista = await JSON.parse(file);
+
+  // Recebendo dados assíncronos com await:
+  const userRequest = await request.json();
+
+  try {
+    for (let x = 0; x < lista.usuarios.length; x++) {
+      const userLista = lista.usuarios[x];
+
+      // Validando o usuário de fato:
+      if (userLista.email == userRequest.email && userLista.senha == userRequest.senha){
+        return NextResponse.json({"status":true})
+      }
+    }
+  } catch (error) {
+    console.log(error)
+  }
+
+  return NextResponse.json({"status":false});
+
 }
